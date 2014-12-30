@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title> .: LDAP GUI for Academic Institutes :. Create Users Steps</title>
+
+	</head>
+
+<body>
+
+	<font color="darkblue">
+		<h1 align=center>LDAP GUI for Academic Institutes</h1>
+	</font>
+	
+
+	<h3 align="center">
+		.: Steps for Creating Users :.
+	</h3>
+
+
+<blockquote>
+Following is the same format for creating .ldif files for users. Each user must have his/her own ldif file with the following parameters. 
+<br>
+Sample Format for user with Roll No. :1 of Computer Department : <tt>1.ldif</tt>
+<pre>
+<tt>
+dn: cn=1,ou=students,ou=comp,dc=coep,dc=com
+uid: 1
+cn: 1
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+objectClass: shadowAccount
+userpassword: test
+shadowLastChange: 2000
+shadowMax: 99999
+shadowWarning: 7
+loginShell: /bin/bash
+uidNumber: 17000
+gidNumber: 14001
+homeDirectory: /comp/students/1
+gecos: 1,students,comp
+
+</tt>
+</pre>
+
+Notes : 
+	<ul>
+	<li>	'cn' should be the name of the user. We have considered his Roll No. as the name. </li>
+	<li> 'ou=students, ou=comp' represents that the user is a 'student' and belongs to 'comp'. The user is added to the 'comp' group which had the gid 14001. This group file was created in the previous step. </li>
+	
+	<li> 'uid' field is the user id. </li>
+	<li> 'homedirectory' is the path of the home directory of the user on the server.</li>
+	<li> The file needs to be added to the LDAP server using : <tt> ldapadd -f 1.ldif -x -D "cn=Manager, dc=coep,dc=com" -w secret</tt>
+
+	</ul>
+
+This sample file is available in the LDAP/Scripts directory of our tool. Creating ldif files for number of users is again a tedious task. We have tried to cut down this time, by providing a shell script for the same. It can fed with the range of roll numbers of the students in a department and it automatically creates ldif files and adds them to the server.
+
+It is advised that you read the comments in the <tt>LDAP/Scripts/UserAdd.sh</tt> before proceeding with creation of user accounts.
+
+
+</blockquote>
+
+
+
+
+<center>
+<form action="index.html">
+<input type="Submit" Value="Back to Home Page">
+</form>
+<center>
+</body>
+</html>
+

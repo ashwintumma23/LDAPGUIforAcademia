@@ -1,0 +1,16 @@
+dn: cn=1,ou=2011,ou=students,ou=comp,dc=coep,dc=com
+uid: 1
+cn: 1
+objectClass: account
+objectClass: posixAccount
+objectClass: top
+objectClass: shadowAccount
+userpassword: test
+shadowLastChange: 2000
+shadowMax: 99999
+shadowWarning: 7
+loginShell: /bin/bash
+uidNumber: 17001
+gidNumber: 14001
+homeDirectory: /comp/students/1
+gecos: 1,students,comp

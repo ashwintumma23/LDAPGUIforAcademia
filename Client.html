@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title> .: LDAP GUI for Academic Institutes :. Client Installation Steps</title>
+
+	</head>
+
+<body>
+
+	<font color="darkblue">
+		<h1 align=center>LDAP GUI for Academic Institutes</h1>
+	</font>
+	
+
+	<h3 align="center">
+		.: Client Installation Steps:.
+	</h3>
+
+
+<blockquote>
+Follow the same installation procedure on all the machines that you want to configure as the LDAP client. The steps are well-documented and explained in the Report[Section 7.3].
+<ol>
+	<li>	
+		Install the package libnss-ldap by 
+	<br> <tt>sudo apt-get install libnss-ldap</tt>
+	<ul>
+	<li>Enter the following when installation is going on:
+
+<tt>ldap://your-ip-address</tt>
+	</li>
+<li>Select Version 3</li>
+<li>Answer No to all other options</li>
+
+	</ul>
+
+	</li>
+
+	<br>
+	<li>
+
+	Copy the file named Client.sh and directory named ClientFiles on each machine and then run the Client.sh file. <br>
+	<tt>./Client.sh</tt>
+<br>
+The details of the prodecure are provided in the Report[Section 7.3.2]
+
+	</li>
+
+</ol>
+
+On successfully running the above shell script, you are done with Client Installation.
+</blockquote>
+
+
+<center>
+<form action="index.html">
+<input type="Submit" Value="Back to Home Page">
+</form>
+<center>
+</body>
+</html>
+

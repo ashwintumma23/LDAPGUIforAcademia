@@ -1,0 +1,15 @@
+LDAP GUI for Academic Institutes.
+---------------------------------
+Graphical User Interface for installing and configuring LDAP Service for Academic Institutes
+
+Developed at : Department of Computer Engineering and Information Technology, College of Engineering, Pune, Maharashtra, India. November 2010
+
+Developers : 	Ashwin Tumma - ashwin.tumma23@gmail.com
+		Swapnil Kulkarni - swapnil514@gmail.com
+
+Pre-requistes: 
+---------------------
+	1. Linux System on x86 architecture
+	2. Java 1.6 
+	3. Apache-Tomcat 6[Web Server]
+	4. Web Browser on the Server Machine for running our tool

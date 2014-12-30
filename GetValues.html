@@ -1,0 +1,118 @@
+<html>
+	<head>
+		<title> .: LDAP GUI for Academic Institutes :. Get Values from user</title>
+
+	<script type="text/javascript">	 
+	function validate_required(field, alerttxt)
+	{
+		with(field)	
+		{
+			if(value==null||value=="")
+			{
+			alert(alerttxt);
+			return false;
+			}
+			else
+			{
+				return true;
+			}
+		}
+	}
+	
+	function validate_form(thisform)
+	{
+		with(thisform)
+		{
+			if(validate_required(Clgname,"College Name field can't be left blank")==false)	
+			{
+				Clgname.focus();
+				return false;
+			}
+			if(validate_required(domain,"Domain Name field can't be left blank")==false)	
+			{
+				domain.focus();
+				return false;
+			}
+			if(validate_required(DeptNo,"Number of Departments field can't be left blank")==false)	
+			{
+				DeptNo.focus();
+				return false;
+			}
+		}
+	}
+	
+	</script>	 
+	</head>
+
+<body>
+
+	<font color="darkblue">
+		<h1 align=center>LDAP GUI for Academic Institutes</h1>
+	</font>
+	
+
+	<h3 align="center">
+		.: Enter Configuration Details :.
+	</h3>
+<center>
+<form action="SubmitValues.jsp" onsubmit="return validate_form(this)" method="post">
+
+	Note: In this form, please enter all the configuration details that you want to be reflected in your LDAP Server Installation for your institute. 	
+	
+
+	
+
+	<br>
+	<br>
+	<table border=0 align="center">
+	<tr>
+		<th>Parameter</th>
+
+		<th> Value</th>
+		<th> Notes/Example</th>
+	</tr>
+
+	<tr>			
+	<td colspan="3">
+	<b><font color="darkblue">Server Details</font></b>
+	</td>
+	</tr>
+	<tr>	
+		<td>Name of Institute : 	</td>
+		<td><input type="textbox" size=25 name="Clgname"></td>
+		<td>Full Name of the Institute</td>
+	</tr>
+
+	<tr>	
+		<td>Domain Name: 	</td>
+		<td><input type="textbox" size=25 name="domain"></td>
+		<td>e.g. : dc=coep, dc=com</td>
+	</tr>
+	
+	<tr>			
+	<td colspan="3">
+	<b><font color="darkblue">Details for building Directory Information Tree</font></b>
+	</td>
+	</tr>
+	
+
+	<tr>	
+		<td>Number of Departments : 	</td>
+		<td><input type="textbox" size=25 name="DeptNo"></td>
+		<td>Number of departments that will use the LDAP Server</td>
+	</tr>
+
+
+
+	<tr>	
+		<td rowspan="2" colspan="3" align="center" valign="middle"><input type="Submit" value="Start Installation"></td>
+	</tr>
+
+	</table>
+	
+	
+	</form>
+	</center>
+</body>
+</html>
+
